@@ -5,58 +5,77 @@
 @endsection
 
 @section('auth-content')
-     <!-- login area start -->
-     <div class="login-area">
+    <!-- Start Containerbar -->
+    <div id="containerbar" class="containerbar authenticate-bg">
+        <!-- Start Container -->
         <div class="container">
-            <div class="login-box ptb--100">
-                <form method="POST" action="{{ route('admin.login.submit') }}">
-                    @csrf
-                    <div class="login-form-head">
-                        <h4>Sign In</h4>
-                        <p>Hello there, Sign in and start managing your Admin Panel</p>
-                    </div>
-                    <div class="login-form-body">
-                        @include('backend.layouts.partials.messages')
-                        <div class="form-gp">
-                            <label for="exampleInputEmail1">Email address or Username</label>
-                            <input type="text" id="exampleInputEmail1" name="email">
-                            <i class="ti-email"></i>
-                            <div class="text-danger"></div>
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="form-gp">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" id="exampleInputPassword1" name="password">
-                            <i class="ti-lock"></i>
-                            <div class="text-danger"></div>
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="row mb-4 rmber-area">
-                            <div class="col-6">
-                                <div class="custom-control custom-checkbox mr-sm-2">
-                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing" name="remember">
-                                    <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
+            <div class="auth-box login-box">
+                <!-- Start row -->
+                <div class="row no-gutters align-items-center justify-content-center">
+                    <!-- Start col -->
+                    {{-- <div class="col-md-6 col-lg-5">
+                        <div class="auth-box-left">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="auth-box-icon">
+                                        <img src="{{asset('assets/images/authentication/auth-box-icon.svg')}}" class="img-fluid" alt="auth-box-icon">
+                                    </div>
+
                                 </div>
                             </div>
-                            {{-- <div class="col-6 text-right">
-                                <a href="#">Forgot Password?</a>
-                            </div> --}}
                         </div>
-                        <div class="submit-btn-area">
-                            <button id="form_submit" type="submit">Sign In <i class="ti-arrow-right"></i></button>
+                    </div> --}}
+                    <!-- Start end -->
+                    <!-- Start col -->
+                    <div class="col-md-12 col-lg-5">
+                        <!-- Start Auth Box -->
+                        <div class="auth-box-right">
+                            <div class="card p-4">
+                                <div class="card-body shadow-sm p-3 mb-5 bg-white rounded">
+                                    <form action="{{ route('admin.login.submit') }}" method="POST">
+                                        @csrf
+
+                                        <h4 class="text-primary mb-4">Log in !</h4>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="username" name="email"
+                                                placeholder="Enter Username here" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" id="password"
+                                                name="password"placeholder="Enter Password here" required>
+                                        </div>
+                                        @include('backend.layouts.partials.messages')
+
+                                        <div class="form-row mb-3">
+                                            <div class="col-sm-6">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="rememberme">
+                                                    <label class="custom-control-label font-14" for="rememberme">Remember
+                                                        Me</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="forgot-psw">
+                                                    <a id="forgot-psw" href="user-forgotpsw.html" class="font-14">Forgot
+                                                        Password?</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-success btn-lg btn-block font-18">Log in
+                                            Now</button>
+                                    </form>
+
+                                </div>
+                            </div>
                         </div>
+                        <!-- End Auth Box -->
                     </div>
-                </form>
+                    <!-- End col -->
+                </div>
+                <!-- End row -->
             </div>
         </div>
+        <!-- End Container -->
     </div>
-    <!-- login area end -->
 @endsection

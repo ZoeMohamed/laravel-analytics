@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -10,31 +10,19 @@
     @yield('styles')
 </head>
 
-<body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <!-- preloader area start -->
+<body class="vertical-layout">
+
     <div id="preloader">
         <div class="loader"></div>
     </div>
-    <!-- preloader area end -->
-    <!-- page container area start -->
-    <div class="page-container">
+    <div id="containerbar">
 
-       @include('backend.layouts.partials.sidebar')
+        @include('backend.layouts.partials.sidebar')
 
-        <!-- main content area start -->
-        <div class="main-content">
-            @include('backend.layouts.partials.header')
-            @yield('admin-content')
-        </div>
-        <!-- main content area end -->
-        @include('backend.layouts.partials.footer')
+        @yield('admin-content')
+
     </div>
-    <!-- page container area end -->
 
-    @include('backend.layouts.partials.offsets')
     @include('backend.layouts.partials.scripts')
     @yield('scripts')
 </body>
