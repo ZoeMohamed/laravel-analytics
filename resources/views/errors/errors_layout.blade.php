@@ -22,15 +22,15 @@
     <!-- preloader area end -->
     <!-- error area start -->
     <div class="error-area ptb--100 text-center">
-        <div class="container">
+        <div class="container mt-5">
             <div class="error-content">
-               @yield('error-content')
+                @yield('error-content')
             </div>
         </div>
     </div>
     <!-- error area end -->
 
-    @include('backend.layouts.partials.offsets')
+    {{-- @include('backend.layouts.partials.offsets') --}}
     @include('backend.layouts.partials.scripts')
     @yield('scripts')
 </body>

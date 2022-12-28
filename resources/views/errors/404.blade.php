@@ -1,7 +1,7 @@
 @extends('errors.errors_layout')
 
 @section('title')
-404 - Page Not Found
+    404 - Page Not Found
 @endsection
 
 @section('error-content')

@@ -17,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@redirectAdmin')->name('index');
+// User Routes
+Route::get('/', 'Auth\LoginController@showLoginForm')->name('index');
+// Home for user
 Route::get('/home', 'HomeController@index')->name('home');
-
 /**
  * Admin routes
  */

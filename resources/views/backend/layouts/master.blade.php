@@ -6,6 +6,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>@yield('title', 'Laravel Role Admin')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
     @include('backend.layouts.partials.styles')
     @yield('styles')
 </head>
